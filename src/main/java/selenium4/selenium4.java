@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.BasicConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -14,6 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import utils.Log;
 
 public class selenium4 {
 	public static WebDriver driver;
@@ -24,6 +26,13 @@ public class selenium4 {
 		 driver = new ChromeDriver();
 		driver.get("https://www.makemytrip.com/");
 		String title=driver.getTitle();
+		BasicConfigurator.configure();
+//		PropertyConfigurator.configure("\\log4j.properties");
+//		Logger log=Logger.getLogger(log4j.class);
+		Log.info("****************************** Starting test cases execution  *****************************************");
+//		System.out.println("start");
+		Log.info("pass");
+		Log.info("good");
 //		Assert.assertEquals(title, "makemytrip");
 	WebElement element=	driver.findElement(By.xpath("//li[text()='Round Trip']"));
 	File src=((TakesScreenshot)element).getScreenshotAs(OutputType.FILE);
