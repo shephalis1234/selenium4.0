@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -26,6 +27,7 @@ public class selenium4 {
 		 driver = new ChromeDriver();
 		driver.get("https://www.makemytrip.com/");
 		String title=driver.getTitle();
+		System.out.println(title);
 		BasicConfigurator.configure();
 //		PropertyConfigurator.configure("\\log4j.properties");
 //		Logger log=Logger.getLogger(log4j.class);
@@ -33,13 +35,21 @@ public class selenium4 {
 //		System.out.println("start");
 		Log.info("pass");
 		Log.info("good");
+		
 //		Assert.assertEquals(title, "makemytrip");
 	WebElement element=	driver.findElement(By.xpath("//li[text()='Round Trip']"));
 	File src=((TakesScreenshot)element).getScreenshotAs(OutputType.FILE);
 	FileUtils.copyFile(src, new File("C:/HaudAPI/selenium4/target/screenshot.png"));
 	
-		driver.close();
 		
-		}
 		
+		
+	//open new blank tab
+	driver.switchTo().newWindow(WindowType.TAB);
+	driver.get("https://www.makemytrip.com/");
+//	driver.close();
+//	open new new window
+	driver.switchTo().newWindow(WindowType.WINDOW); 
+	driver.getTitle();
+	}		
 }
