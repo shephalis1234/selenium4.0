@@ -32,7 +32,7 @@ public class selenium4 {
 //		PropertyConfigurator.configure("\\log4j.properties");
 //		Logger log=Logger.getLogger(log4j.class);
 		Log.info("****************************** Starting test cases execution  *****************************************");
-//		System.out.println("start");
+
 		Log.info("pass");
 		Log.info("good");
 		
