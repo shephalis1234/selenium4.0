@@ -31,7 +31,6 @@ public class selenium4 {
 		BasicConfigurator.configure();
 //		PropertyConfigurator.configure("\\log4j.properties");
 //		Logger log=Logger.getLogger(log4j.class);
-		Log.info("****************************** Starting test cases execution  *****************************************");
 
 		Log.info("pass");
 		Log.info("good");
