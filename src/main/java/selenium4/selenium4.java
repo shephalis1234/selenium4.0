@@ -44,7 +44,7 @@ public class selenium4 {
 		
 		
 		
-	//open new blank tab
+	// open new blank tab
 	driver.switchTo().newWindow(WindowType.TAB);
 	driver.get("https://www.makemytrip.com/");
 	driver.close();
